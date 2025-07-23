@@ -38,5 +38,12 @@ public class PlayerNetwork : NetworkBehaviour
         float moveSpeed = 3f;
         transform.position += moveDir * moveSpeed * Time.deltaTime;
     }
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.gameObject);
+        if (collision.gameObject.GetComponent<Enemy>() != null)
+        {
+            Debug.Log("It is a Enemy");
+        }
+    }
 }
